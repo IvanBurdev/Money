@@ -12,10 +12,10 @@ namespace Money.Models
         public string Title { get; set; }
 
         [Column(TypeName = "nvarchar(5)")]
-        public string icon {  get; set; }
+        public string icon { get; set; } = "";
 
         [Column(TypeName = "nvarchar(10)")]
-        public string MyProperty {  get; set; }
+        public string MyProperty { get; set; } = "Expense";
 
 
     }
