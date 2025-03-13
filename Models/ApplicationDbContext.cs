@@ -6,7 +6,6 @@ namespace Money.Models
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
-
         }
 
         public DbSet<Transaction> Transaction { get; set; }
