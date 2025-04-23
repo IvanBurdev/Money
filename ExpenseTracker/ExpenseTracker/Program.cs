@@ -9,15 +9,15 @@ builder.Services.AddControllersWithViews();
 // Database Configuration with retry logic
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DevConnection1"),
-        sqlServerOptions =>
-        {
-            sqlServerOptions.EnableRetryOnFailure(
-                maxRetryCount: 5,
-                maxRetryDelay: TimeSpan.FromSeconds(30),
-                errorNumbersToAdd: null);
-            sqlServerOptions.CommandTimeout(60); // Increase command timeout if needed
-        }));
+        builder.Configuration.GetConnectionString("SharedConnection")));
+        //sqlServerOptions =>
+        //{
+        //    sqlServerOptions.EnableRetryOnFailure(
+        //        maxRetryCount: 5,
+        //        maxRetryDelay: TimeSpan.FromSeconds(30),
+        //        errorNumbersToAdd: null);
+        //    sqlServerOptions.CommandTimeout(60); // Increase command timeout if needed
+        //}));
 
 // Register Syncfusion license
 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mgo+DSMBMAY9C3t2VVhhQlFac1pJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRdkNjWn9edHNRRmZYWEM=");
